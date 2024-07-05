@@ -3,6 +3,7 @@ import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 from model import transformer, VOCAB_SIZE, SEQUENCE_LENGTH
+from preprocess_text import text_preprocessing_pipeline
 import pickle
 
 st.title('Sentiment analysis model serving')
@@ -30,7 +31,8 @@ def load_vectorizer():
 
 def vectorize_input(sentence):
     vectorizer = load_vectorizer()
-    vectorized_input = vectorizer(tf.constant(sentence))
+    sentence_preprocessed = text_preprocessing_pipeline(sentence)
+    vectorized_input = vectorizer(tf.constant(sentence_preprocessed))
     
     if len(vectorized_input)<SEQUENCE_LENGTH:
         vectorized_input = tf.pad(vectorized_input, [[0,SEQUENCE_LENGTH-len(vectorized_input)]])
