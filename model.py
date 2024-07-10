@@ -2,10 +2,10 @@ import numpy as np
 import tensorflow as tf
 
 VOCAB_SIZE=10000
-SEQUENCE_LENGTH=128
+SEQUENCE_LENGTH=250
 EMBEDDING_DIM=100
 D_FF=1024
-NUM_HEADS=8
+NUM_HEADS=12
 NUM_LAYERS=1
 
 def positional_encoding(model_size,SEQUENCE_LENGTH):
@@ -99,6 +99,7 @@ for _ in range(NUM_LAYERS):
   
   x=TransformerEncoder(EMBEDDING_DIM,D_FF,NUM_HEADS)(x)
 
+x = tf.keras.layers.GlobalMaxPooling1D()(x)
 x = tf.keras.layers.Flatten()(x)
 output=tf.keras.layers.Dense(27, activation="sigmoid")(x)
 

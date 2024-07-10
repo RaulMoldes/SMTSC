@@ -9,7 +9,11 @@ import pickle
 st.title('Sentiment analysis model serving')
 st.text('Welcome to my sentiment analysis system !\n It is built from scratch using my own transformer encoder architecture.\n Enter a sentence to get the sentiment!')
 st.text('@author: Raúl Moldes Castillo')
-
+st.text('@github: RaulMoldes')
+st.text('Model trained on the Google Emotions dataset.')
+st.text('Achieved 0.03 hamming loss on the test set.')
+st.text('Achieved 0.85 AUC on the test set.')
+st.text('Achieved 0.11 Binary Cross Entropy Loss on the test set.')
 CATEGORIES =  ['admiration', 'amusement', 'anger', 'annoyance', 'approval', 'caring', 'confusion', 'curiosity', 'desire', 'disappointment', 'disapproval', 'disgust', 'embarrassment', 'excitement', 'fear', 'gratitude', 'grief', 'joy', 'love', 'nervousness', 'optimism', 'pride', 'realization', 'relief', 'remorse', 'sadness', 'surprise']
 
 def standardization(input_data):
