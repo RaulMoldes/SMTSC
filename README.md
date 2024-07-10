@@ -18,3 +18,9 @@ The steps involved in building the sentiment classification system are as follow
 By building this sentiment classification system from scratch, I aim to gain a deeper understanding of the transformer architecture and its application in natural language processing tasks.
 
 Feel free to contribute to this project by submitting pull requests or opening issues. Let's work together to improve sentiment analysis!
+
+## Achievements
+
+* 0.85 AUC on the test set.
+* 0.03 Hamming Loss on the test set.
+* 0.11 Binary Cross entropy loss on the test set.
